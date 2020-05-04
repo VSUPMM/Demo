@@ -12,6 +12,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 
+//указывает на то, что данные, возвращаемые каждым методом, будут записаны прямо в тело ответа вместо рендеринга шаблона.
 @RestController
 class EmployeeController {
 
@@ -25,6 +26,8 @@ class EmployeeController {
         this.repository = repository;
         this.assembler = assembler;
     }
+
+    //У нас есть маршруты для каждой операции ( @GetMapping, @PostMapping, @PutMappingи @DeleteMapping
 
     @PostMapping("/employees")
     Employee newEmployee(@RequestBody Employee newEmployee) {
